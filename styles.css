@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+
+    .image-container {
+        background: none;
+
+    }
+
+    .header h1 span {
+        color: darkgoldenrod;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between ;
+        align-items: center;
+        height: 80px;
+
+    {
+        margin-left: 10px;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+}
+        /* ---------- STYLE DU MENU ---------- */
+        .menu {
+            width: 100%;
+            padding: 15px 0;
+            position: absolute; /* reste en haut de la page */
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end; /* aligne les liens à droite */
+            align-items: center;
+            gap:25px;
+            margin-right: 10px;
+        }
+
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .menu li a:hover {
+            color: darkgoldenrod; /* effet gold au survol */
+        }
+
+        /* ---------- VERSION MOBILE ---------- */
+        @media screen and (max-width: 768px) {
+            .menu ul {
+                justify-content: center; /* centre les éléments sur mobile */
+                margin-right: 0;
+                flex-direction: column; /* menu vertical */
+                padding: 20px 0;
+            }
+
+            .mobile-hide {
+                display: none; /* cache les liens quand tu veux les masquer */
+            }
+        }
+
+
+    }
+
+    .intro {
+        text-align: center;
+        padding: 25px 25px;
+        border-top: 1px solid darkgoldenrod;
+        border-bottom: 1px solid darkgoldenrod;
+    }
+
+    .intro h2 span {
+        color: darkgoldenrod;
+        margin: 5px 0;
+    }
+    .intro blockquote span {
+        color: darkgoldenrod;
+    }
+
+    .produits {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .produits h2 span {
+        font-size: 28px;
+        color: darkgoldenrod;
+        margin-bottom: 30px;
+    }
+
+
+
+
+
+    .carte-produit {
+        background-color: #111;
+        border: 1px solid darkgoldenrod;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 300px;
+        border-radius: 8px;
+    }
+    .carte-produit h3 span {
+    color: white;
+    }
+    .produits h3 span:hover {
+        color: darkgoldenrod;
+    }
+    .carte-produit img {
+        width: 100%;
+        border-bottom: 1px solid darkgoldenrod;
+        margin-bottom: 15px;
+    }
+
+    .carte-produit h3 {
+        color: white;
+        margin: 10px 0;
+    }
+
+    footer {
+        background-color: #111;
+        text-align: center;
+        padding: 20px;
+        border-top: 1px solid darkgoldenrod;
+        font-size: 14px;
+    }
+
+
