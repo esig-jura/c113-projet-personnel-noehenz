@@ -1,141 +1,163 @@
+/* ---------- STYLE GLOBAL ---------- */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #000;
     color: #fff;
-
-    .image-container {
-        background: none;
-
-    }
-
-    .header h1 span {
-        color: darkgoldenrod;
-    }
-
-    header {
-        display: flex;
-        justify-content: space-between ;
-        align-items: center;
-        height: 80px;
-
-    {
-        margin-left: 10px;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Arial', sans-serif;
-    }
-
+    box-sizing: border-box;
 }
-        /* ---------- STYLE DU MENU ---------- */
-        .menu {
-            width: 100%;
-            padding: 15px 0;
-            position: absolute; /* reste en haut de la page */
-            top: 0;
-            left: 0;
-            z-index: 100;
-        }
 
-        .menu ul {
-            list-style: none;
-            display: flex;
-            justify-content: flex-end; /* aligne les liens à droite */
-            align-items: center;
-            gap:25px;
-            margin-right: 10px;
-        }
-
-        .menu li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
-
-        .menu li a:hover {
-            color: darkgoldenrod; /* effet gold au survol */
-        }
-
-        /* ---------- VERSION MOBILE ---------- */
-        @media screen and (max-width: 768px) {
-            .menu ul {
-                justify-content: center; /* centre les éléments sur mobile */
-                margin-right: 0;
-                flex-direction: column; /* menu vertical */
-                padding: 20px 0;
-            }
-
-            .mobile-hide {
-                display: none; /* cache les liens quand tu veux les masquer */
-            }
-        }
-
-
-    }
-
-    .intro {
-        text-align: center;
-        padding: 25px 25px;
-        border-top: 1px solid darkgoldenrod;
-        border-bottom: 1px solid darkgoldenrod;
-    }
-
-    .intro h2 span {
-        color: darkgoldenrod;
-        margin: 5px 0;
-    }
-    .intro blockquote span {
-        color: darkgoldenrod;
-    }
-
-    .produits {
-        padding: 40px 20px;
-        text-align: center;
-    }
-
-    .produits h2 span {
-        font-size: 28px;
-        color: darkgoldenrod;
-        margin-bottom: 30px;
-    }
-
-
-
-
-
-    .carte-produit {
-        background-color: #111;
-        border: 1px solid darkgoldenrod;
+/* ---------- HEADER ---------- */
+.header {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 20px;
-        margin: 20px auto;
-        max-width: 300px;
-        border-radius: 8px;
     }
-    .carte-produit h3 span {
-    color: white;
+
+    /* Centrer le texte "Ordre et discipline" entre le logo et le menu */
+    .slogan {
+        text-align: center;
+        flex-grow: 1; /* permet au bloc de prendre l’espace au milieu */
     }
-    .produits h3 span:hover {
+
+    .slogan h2 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        margin: 0;
+    }
+
+    .slogan h2 span {
         color: darkgoldenrod;
     }
-    .carte-produit img {
-        width: 100%;
-        border-bottom: 1px solid darkgoldenrod;
-        margin-bottom: 15px;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.header h1 span {
+    color: darkgoldenrod;
+}
+
+/* ---------- MENU ---------- */
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: darkgoldenrod;
+}
+
+/* ---------- SECTION INTRO ---------- */
+#intro {
+    text-align: center;
+    padding: 25px;
+    margin: 40px auto;
+    border: 2px solid darkgoldenrod;
+    border-radius: 10px;
+    max-width: 800px;
+}
+
+#intro h2 span,
+#intro blockquote span {
+    color: darkgoldenrod;
+}
+
+/* ---------- SECTION PRODUITS ---------- */
+#produits {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#produits h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+#produits h2 span {
+    color: darkgoldenrod;
+}
+
+/* ---------- GAMME (3 CARTES EN LIGNE) ---------- */
+.gamme {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* ---------- CARTE PRODUIT ---------- */
+.carte-produit {
+    background-color: #111;
+    border: 1px solid darkgoldenrod;
+    padding: 20px;
+    max-width: 300px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carte-produit:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(218, 165, 32, 0.6);
+}
+
+.carte-produit img {
+    width: 100%;
+    border-bottom: 1px solid darkgoldenrod;
+    margin-bottom: 15px;
+    border-radius: 5px 5px 0 0;
+}
+
+.carte-produit h3 {
+    margin: 10px 0;
+    color: #fff;
+}
+
+.carte-produit h3 span {
+    color: darkgoldenrod;
+}
+
+.carte-produit p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid darkgoldenrod;
+    font-size: 14px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media screen and (max-width: 768px) {
+    .menu ul {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .carte-produit h3 {
-        color: white;
-        margin: 10px 0;
+    .gamme {
+        flex-direction: column;
+        align-items: center;
     }
-
-    footer {
-        background-color: #111;
-        text-align: center;
-        padding: 20px;
-        border-top: 1px solid darkgoldenrod;
-        font-size: 14px;
-    }
-
-
+}
