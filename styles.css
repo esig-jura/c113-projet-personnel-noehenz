@@ -1,163 +1,130 @@
-/* ---------- STYLE GLOBAL ---------- */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
+:root {
+    --gold: darkgoldenrod;
+    --white: #ffffff;
+    --black: #000000;
+
+    --font-main: Arial, sans-serif;
+    --font-alt: "Trebuchet MS", sans-serif;
+
+    --space-s: 5px;
+    --space-m: 10px;
+    --space-l: 20px;
+}
+
+* {
     box-sizing: border-box;
 }
 
-/* ---------- HEADER ---------- */
-.header {
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-    }
-
-    /* Centrer le texte "Ordre et discipline" entre le logo et le menu */
-    .slogan {
-        text-align: center;
-        flex-grow: 1; /* permet au bloc de prendre l’espace au milieu */
-    }
-
-    .slogan h2 {
-        font-size: 20px;
-        font-weight: 600;
-        color: #fff;
-        margin: 0;
-    }
-
-    .slogan h2 span {
-        color: darkgoldenrod;
-    }
+body {
+    margin: 0;
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-main);
+    line-height: 1.6;
 }
 
-.header h1 {
-    font-size: 28px;
-    font-weight: bold;
+.gold-title {
+    color: var(--gold);
+    text-shadow: 0 0 10px var(--gold);
+    letter-spacing: 1px;
 }
 
-.header h1 span {
-    color: darkgoldenrod;
-}
-
-/* ---------- MENU ---------- */
 .menu ul {
     list-style: none;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 25px;
+    justify-content: space-around;
+    padding: var(--space-m);
     margin: 0;
-    padding: 0;
+    background: #111;
 }
 
-.menu li a {
-    color: #fff;
+.menu a {
+    color: var(--white);
     text-decoration: none;
     font-weight: bold;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
+    padding: var(--space-s) var(--space-m);
+    border-radius: 6px;
+    transition: 0.3s;
 }
 
-.menu li a:hover {
-    color: darkgoldenrod;
+.menu a:hover,
+.menu a:focus,
+.menu a:active {
+    color: var(--gold);
+    box-shadow: 0 0 10px var(--gold);
 }
 
-/* ---------- SECTION INTRO ---------- */
-#intro {
+.intro {
     text-align: center;
-    padding: 25px;
-    margin: 40px auto;
-    border: 2px solid darkgoldenrod;
-    border-radius: 10px;
-    max-width: 800px;
+    padding: var(--space-l) var(--space-m);
 }
 
-#intro h2 span,
-#intro blockquote span {
-    color: darkgoldenrod;
+.intro span {
+    color: var(--gold);
 }
 
-/* ---------- SECTION PRODUITS ---------- */
 #produits {
-    padding: 40px 20px;
     text-align: center;
+    padding: var(--space-m);
 }
 
-#produits h2 {
-    font-size: 32px;
-    margin-bottom: 40px;
+#produits span {
+    color: var(--gold);
 }
 
-#produits h2 span {
-    color: darkgoldenrod;
-}
-
-/* ---------- GAMME (3 CARTES EN LIGNE) ---------- */
 .gamme {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-m);
+    padding: var(--space-m);
 }
 
-/* ---------- CARTE PRODUIT ---------- */
 .carte-produit {
-    background-color: #111;
-    border: 1px solid darkgoldenrod;
-    padding: 20px;
-    max-width: 300px;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #111;
+    padding: var(--space-m);
+    border-radius: 10px;
+    transition: 0.3s;
+    filter: brightness(0.95);
 }
 
 .carte-produit:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(218, 165, 32, 0.6);
+    box-shadow: 0 0 15px var(--gold);
+    filter: brightness(1.1);
 }
 
 .carte-produit img {
     width: 100%;
-    border-bottom: 1px solid darkgoldenrod;
-    margin-bottom: 15px;
-    border-radius: 5px 5px 0 0;
+    max-width: 100%;
+    border-radius: 8px;
 }
 
-.carte-produit h3 {
-    margin: 10px 0;
-    color: #fff;
-}
-
-.carte-produit h3 span {
-    color: darkgoldenrod;
-}
-
-.carte-produit p {
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* ---------- FOOTER ---------- */
-footer {
-    background-color: #111;
+.apropos,
+.contact {
     text-align: center;
-    padding: 20px;
-    border-top: 1px solid darkgoldenrod;
+    padding: var(--space-l) var(--space-m);
+    font-family: var(--font-alt);
+}
+
+footer {
+    text-align: center;
+    padding: var(--space-m);
+    background: #111;
     font-size: 14px;
 }
 
-/* ---------- RESPONSIVE ---------- */
-@media screen and (max-width: 768px) {
+@media (min-width: 768px) {
     .menu ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .gamme {
-        flex-direction: column;
-        align-items: center;
+        gap: 25px;
     }
 }
+
+@media (min-width: 1024px) {
+    .intro {
+        padding: var(--space-l) 25%;
+    }
+    .gamme {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
