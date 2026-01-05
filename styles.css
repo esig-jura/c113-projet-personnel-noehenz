@@ -20,6 +20,7 @@ body {
     background: var(--black);
     color: var(--white);
     font-family: var(--font-main);
+    font-size: 16px;
     line-height: 1.6;
 }
 
@@ -39,6 +40,7 @@ body {
 }
 
 .menu a {
+
     color: var(--white);
     text-decoration: none;
     font-weight: bold;
@@ -46,7 +48,9 @@ body {
     border-radius: 6px;
     transition: 0.3s;
 }
-
+.menu a:visited {
+    color: var(--white);
+}
 .menu a:hover,
 .menu a:focus,
 .menu a:active {
