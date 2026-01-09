@@ -1,5 +1,5 @@
 /* ===================================================== */
-/* POLICE LOCALE - TEXTE À PROPOS */
+/* POLICE LOCALE – TEXTE "À PROPOS" */
 /* ===================================================== */
 
 @font-face {
@@ -16,14 +16,15 @@
 /* ===================================================== */
 
 :root {
-    /* Couleurs (3 minimum) */
+    /* Couleurs */
     --color-gold: darkgoldenrod;
+    --color-gold-light: gold;
     --color-black: #111111;
-    --color-gray-light: #cccccc;
+    --color-gray: #cccccc;
 
-    /* Polices (2 seulement) */
-    --font-main: Arial, Helvetica, sans-serif; /* police principale */
-    --font-apropos: 'Playfair_Display', serif; /* texte À propos */
+    /* Polices */
+    --font-main: Arial, Helvetica, sans-serif;
+    --font-apropos: 'Playfair_Display', serif;
 
     /* Espacements */
     --space-s: 5px;
@@ -36,13 +37,13 @@
 }
 
 /* ===================================================== */
-/* RESET SIMPLE */
+/* RESET */
 /* ===================================================== */
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* ===================================================== */
@@ -58,7 +59,7 @@ body {
 }
 
 /* ===================================================== */
-/* HEADER / MENU (IDENTIQUE MOBILE / DESKTOP) */
+/* HEADER / NAVIGATION */
 /* ===================================================== */
 
 header {
@@ -66,9 +67,10 @@ header {
 }
 
 .menu {
-    border-bottom: 1px solid var(--color-gold);
     padding: var(--space-m);
     text-align: center;
+    border-bottom: 1px solid var(--color-gold);
+    box-shadow: 0 2px 10px rgba(218,165,32,0.3);
 }
 
 .menu a {
@@ -76,20 +78,25 @@ header {
     text-decoration: none;
     font-weight: bold;
     margin: 0 var(--space-m);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .menu a:hover {
-    color: var(--color-gold);
+    color: var(--color-gold-light);
+    text-shadow: 0 0 8px var(--color-gold-light);
 }
 
 /* ===================================================== */
-/* TITRES */
+/* TITRES BRILLANTS */
 /* ===================================================== */
 
 .gold-title {
-    color: var(--color-gold);
+    color: var(--color-gold-light);
     text-align: center;
     letter-spacing: 1px;
+    text-shadow:
+            0 0 5px var(--color-gold),
+            0 0 10px var(--color-gold);
 }
 
 /* ===================================================== */
@@ -120,38 +127,74 @@ section {
 /* PRODUITS */
 /* ===================================================== */
 
+#produits h2 {
+    margin-bottom: var(--space-m);
+}
+
+/* Grille */
 .gamme {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+    gap: 25px;
     justify-items: center;
 }
 
+/* Carte produit brillante */
 .carte-produit {
+    background-color: var(--color-black);
+    padding: var(--space-m);
+    border-radius: 12px;
+
+    border: 2px solid transparent;
+
     max-width: var(--max-card-width);
     width: 100%;
+    text-align: center;
+
+    transition:
+            border-color 0.3s ease,
+            box-shadow 0.3s ease,
+            transform 0.3s ease;
 }
 
+/* Brillance au survol / clic */
+.carte-produit:hover {
+    border-color: var(--color-gold-light);
+    box-shadow:
+            0 0 10px var(--color-gold),
+            0 0 20px rgba(218,165,32,0.6);
+    transform: scale(1.03);
+}
+
+/* Images adaptatives */
 .carte-produit img {
     width: 100%;
     max-width: 100%;
     height: auto;
     display: block;
+    border-radius: 8px;
+}
+
+/* Légende */
+.carte-produit figcaption {
+    margin-top: var(--space-s);
+    font-weight: bold;
+    color: var(--color-gold-light);
+    text-shadow: 0 0 6px var(--color-gold);
 }
 
 /* ===================================================== */
 /* À PROPOS */
 /* ===================================================== */
 
-/* ⚠️ Titre inchangé */
 #apropos h2 {
     margin-bottom: var(--space-m);
 }
 
-/* ✅ SEUL LE TEXTE change de police */
+/* Texte différent, doux et lisible */
 #apropos p {
     font-family: var(--font-apropos);
-    color: var(--color-gray-light);
+    color: var(--color-gray);
 }
 
 /* ===================================================== */
@@ -159,18 +202,19 @@ section {
 /* ===================================================== */
 
 #contact p {
-    color: var(--color-gray-light);
+    color: var(--color-gray);
 }
 
 /* ===================================================== */
-/* FOOTER */
+/* FOOTER BRILLANT */
 /* ===================================================== */
 
 footer {
     border-top: 1px solid var(--color-gold);
     padding: var(--space-m);
     text-align: center;
-    color: var(--color-gray-light);
+    color: var(--color-gray);
+    box-shadow: 0 -2px 10px rgba(218,165,32,0.3);
 }
 
 /* ===================================================== */
