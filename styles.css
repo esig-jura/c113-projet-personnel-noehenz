@@ -1,134 +1,184 @@
+/* ===================================================== */
+/* POLICE LOCALE - TEXTE À PROPOS */
+/* ===================================================== */
+
+@font-face {
+    font-family: 'Playfair_Display';
+    src: url('font/Playfair_Display.woff') format('woff'),
+    url('font/Playfair_Display.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ===================================================== */
+/* VARIABLES CSS */
+/* ===================================================== */
+
 :root {
-    --gold: darkgoldenrod;
-    --white: #ffffff;
-    --black: #000000;
+    /* Couleurs (3 minimum) */
+    --color-gold: darkgoldenrod;
+    --color-black: #111111;
+    --color-gray-light: #cccccc;
 
-    --font-main: Arial, sans-serif;
-    --font-alt: "Trebuchet MS", sans-serif;
+    /* Polices (2 seulement) */
+    --font-main: Arial, Helvetica, sans-serif; /* police principale */
+    --font-apropos: 'Playfair_Display', serif; /* texte À propos */
 
+    /* Espacements */
     --space-s: 5px;
     --space-m: 10px;
     --space-l: 20px;
+
+    /* Largeurs */
+    --max-content-width: 650px;
+    --max-card-width: 280px;
 }
+
+/* ===================================================== */
+/* RESET SIMPLE */
+/* ===================================================== */
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+/* ===================================================== */
+/* BASE */
+/* ===================================================== */
+
 body {
-    margin: 0;
-    background: var(--black);
-    color: var(--white);
     font-family: var(--font-main);
+    background-color: var(--color-black);
+    color: white;
     font-size: 16px;
     line-height: 1.6;
 }
 
-.gold-title {
-    color: var(--gold);
-    text-shadow: 0 0 10px var(--gold);
-    letter-spacing: 1px;
+/* ===================================================== */
+/* HEADER / MENU (IDENTIQUE MOBILE / DESKTOP) */
+/* ===================================================== */
+
+header {
+    width: 100%;
 }
 
-.menu ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
+.menu {
+    border-bottom: 1px solid var(--color-gold);
     padding: var(--space-m);
-    margin: 0;
-    background: #111;
+    text-align: center;
 }
 
 .menu a {
-
-    color: var(--white);
+    color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: var(--space-s) var(--space-m);
-    border-radius: 6px;
-    transition: 0.3s;
-}
-.menu a:visited {
-    color: var(--white);
-}
-.menu a:hover,
-.menu a:focus,
-.menu a:active {
-    color: var(--gold);
-    box-shadow: 0 0 10px var(--gold);
+    margin: 0 var(--space-m);
 }
 
-.intro {
+.menu a:hover {
+    color: var(--color-gold);
+}
+
+/* ===================================================== */
+/* TITRES */
+/* ===================================================== */
+
+.gold-title {
+    color: var(--color-gold);
     text-align: center;
+    letter-spacing: 1px;
+}
+
+/* ===================================================== */
+/* SECTIONS */
+/* ===================================================== */
+
+section {
     padding: var(--space-l) var(--space-m);
-}
-
-.intro span {
-    color: var(--gold);
-}
-
-#produits {
+    display: flex;
+    justify-content: center;
     text-align: center;
-    padding: var(--space-m);
 }
 
-#produits span {
-    color: var(--gold);
+.content {
+    max-width: var(--max-content-width);
+    width: 100%;
 }
+
+/* ===================================================== */
+/* ACCUEIL */
+/* ===================================================== */
+
+#accueil p {
+    margin-top: var(--space-m);
+}
+
+/* ===================================================== */
+/* PRODUITS */
+/* ===================================================== */
 
 .gamme {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-m);
-    padding: var(--space-m);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    justify-items: center;
 }
 
 .carte-produit {
-    background: #111;
-    padding: var(--space-m);
-    border-radius: 10px;
-    transition: 0.3s;
-    filter: brightness(0.95);
-}
-
-.carte-produit:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--gold);
-    filter: brightness(1.1);
+    max-width: var(--max-card-width);
+    width: 100%;
 }
 
 .carte-produit img {
     width: 100%;
     max-width: 100%;
-    border-radius: 8px;
+    height: auto;
+    display: block;
 }
 
-.apropos,
-.contact {
-    text-align: center;
-    padding: var(--space-l) var(--space-m);
-    font-family: var(--font-alt);
+/* ===================================================== */
+/* À PROPOS */
+/* ===================================================== */
+
+/* ⚠️ Titre inchangé */
+#apropos h2 {
+    margin-bottom: var(--space-m);
 }
+
+/* ✅ SEUL LE TEXTE change de police */
+#apropos p {
+    font-family: var(--font-apropos);
+    color: var(--color-gray-light);
+}
+
+/* ===================================================== */
+/* CONTACT */
+/* ===================================================== */
+
+#contact p {
+    color: var(--color-gray-light);
+}
+
+/* ===================================================== */
+/* FOOTER */
+/* ===================================================== */
 
 footer {
-    text-align: center;
+    border-top: 1px solid var(--color-gold);
     padding: var(--space-m);
-    background: #111;
-    font-size: 14px;
+    text-align: center;
+    color: var(--color-gray-light);
 }
 
-@media (min-width: 768px) {
-    .menu ul {
-        gap: 25px;
-    }
-}
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
 
-@media (min-width: 1024px) {
-    .intro {
-        padding: var(--space-l) 25%;
-    }
+@media (max-width: 767px) {
     .gamme {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
     }
 }
-
