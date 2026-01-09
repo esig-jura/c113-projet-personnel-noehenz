@@ -190,7 +190,7 @@ section {
 #apropos h2 {
     margin-bottom: var(--space-m);
 }
-
+ 
 /* Texte différent, doux et lisible */
 #apropos p {
     font-family: var(--font-apropos);
