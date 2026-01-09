@@ -1,54 +1,25 @@
-/* ===================================================== */
-/* POLICE LOCALE – TEXTE "À PROPOS" */
-/* ===================================================== */
-
-@font-face {
-    font-family: 'Playfair_Display';
-    src: url('fonts/Playfair_Display.woff2') format('woff2'),
-    url('fonts/Playfair_Display.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-/* ===================================================== */
-/* VARIABLES CSS */
-/* ===================================================== */
-
 :root {
-    /* Couleurs */
     --color-gold: darkgoldenrod;
     --color-gold-light: gold;
     --color-black: #111111;
     --color-gray: #cccccc;
 
-    /* Polices */
     --font-main: Arial, Helvetica, sans-serif;
     --font-apropos: 'Playfair_Display', serif;
 
-    /* Espacements */
     --space-s: 5px;
     --space-m: 10px;
     --space-l: 20px;
 
-    /* Largeurs */
     --max-content-width: 650px;
     --max-card-width: 280px;
 }
-
-/* ===================================================== */
-/* RESET */
-/* ===================================================== */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-/* ===================================================== */
-/* BASE */
-/* ===================================================== */
 
 body {
     font-family: var(--font-main);
@@ -58,10 +29,7 @@ body {
     line-height: 1.6;
 }
 
-/* ===================================================== */
 /* HEADER / NAVIGATION */
-/* ===================================================== */
-
 header {
     width: 100%;
 }
@@ -70,7 +38,6 @@ header {
     padding: var(--space-m);
     text-align: center;
     border-bottom: 1px solid var(--color-gold);
-    box-shadow: 0 2px 10px rgba(218,165,32,0.3);
 }
 
 .menu a {
@@ -78,31 +45,22 @@ header {
     text-decoration: none;
     font-weight: bold;
     margin: 0 var(--space-m);
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 .menu a:hover {
     color: var(--color-gold-light);
-    text-shadow: 0 0 8px var(--color-gold-light);
 }
 
-/* ===================================================== */
-/* TITRES BRILLANTS */
-/* ===================================================== */
-
+/* TITRES */
 .gold-title {
     color: var(--color-gold-light);
     text-align: center;
     letter-spacing: 1px;
-    text-shadow:
-            0 0 5px var(--color-gold),
-            0 0 10px var(--color-gold);
+    text-shadow: 0 0 5px var(--color-gold);
 }
 
-/* ===================================================== */
 /* SECTIONS */
-/* ===================================================== */
-
 section {
     padding: var(--space-l) var(--space-m);
     display: flex;
@@ -115,112 +73,62 @@ section {
     width: 100%;
 }
 
-/* ===================================================== */
-/* ACCUEIL */
-/* ===================================================== */
-
-#accueil p {
-    margin-top: var(--space-m);
-}
-
-/* ===================================================== */
 /* PRODUITS */
-/* ===================================================== */
-
-#produits h2 {
-    margin-bottom: var(--space-m);
-}
-
-/* Grille produits */
 .gamme {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 25px;
+    gap: 20px;
     justify-items: center;
 }
 
-/* Carte produit brillante */
 .carte-produit {
     background-color: var(--color-black);
     padding: var(--space-m);
-    border-radius: 12px;
-
+    border-radius: 10px;
     border: 2px solid transparent;
-
     max-width: var(--max-card-width);
     width: 100%;
     text-align: center;
-
-    transition:
-            border-color 0.3s ease,
-            box-shadow 0.3s ease,
-            transform 0.3s ease;
+    transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Brillance au survol / clic */
+/* Brillance légère au hover */
 .carte-produit:hover {
     border-color: var(--color-gold-light);
-    box-shadow:
-            0 0 10px var(--color-gold),
-            0 0 20px rgba(218,165,32,0.6);
-    transform: scale(1.03);
+    transform: scale(1.02);
 }
 
-/* Images adaptatives */
+/* Images adaptatives + dimensions fixes pour CLS */
 .carte-produit img {
     width: 100%;
-    max-width: 100%;
     height: auto;
+    max-width: 100%;
+    border-radius: 6px;
     display: block;
-    border-radius: 8px;
 }
 
-/* Légende produit */
+/* Légendes */
 .carte-produit figcaption {
     margin-top: var(--space-s);
     font-weight: bold;
     color: var(--color-gold-light);
-    text-shadow: 0 0 6px var(--color-gold);
 }
 
-/* ===================================================== */
 /* À PROPOS */
-/* ===================================================== */
-
-#apropos h2 {
-    margin-bottom: var(--space-m);
-}
-
-/* Texte différent uniquement */
 #apropos p {
     font-family: var(--font-apropos);
     color: var(--color-gray);
 }
 
-/* ===================================================== */
-/* CONTACT */
-/* ===================================================== */
-
-#contact p {
-    color: var(--color-gray);
-}
-
-/* ===================================================== */
-/* FOOTER BRILLANT */
-/* ===================================================== */
-
+/* FOOTER */
 footer {
     border-top: 1px solid var(--color-gold);
     padding: var(--space-m);
     text-align: center;
     color: var(--color-gray);
-    box-shadow: 0 -2px 10px rgba(218,165,32,0.3);
 }
 
-/* ===================================================== */
 /* RESPONSIVE */
-/* ===================================================== */
-
 @media (max-width: 767px) {
     .gamme {
         grid-template-columns: 1fr;
