@@ -64,10 +64,10 @@
 - HTML Validator : ✅ valide W3C
 - CSS Validator : ✅ valide W3C
 - PageSpeed Insights :
-  - Performance : 80/100 mobile, 90/100 desktop
-  - Accessibilité : 95/100
-  - Bonnes pratiques : 90/100
-  - SEO : 85/100
+  - Performance : 100/100 mobile, 90/100 desktop
+  - Accessibilité : 100/100
+  - Bonnes pratiques : 73/77
+  - SEO : 91/91
 
 ### Compatibilité
 - Navigateurs testés : Chrome 120+, Firefox 120+, Safari 16+
@@ -108,8 +108,8 @@
 - Concepts difficiles maîtrisés : layout mobile-first, hiérarchie des titres, optimisation PageSpeed
 
 ### Difficultés rencontrées
-- Problèmes techniques : alignement des cartes sur mobile, brillance CSS légère
-- Solutions trouvées : utilisation de CSS Grid avec `justify-items: center`, transitions simples pour hover
+- Problèmes techniques : alignement des cartes sur mobile, 
+- Solutions trouvées : utilisation de CSS Grid avec `justify-items: center`
 - Moments de blocage : choix des polices locales, images adaptatives
 
 ### Réussites et fiertés
