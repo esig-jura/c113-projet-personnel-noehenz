@@ -4,8 +4,8 @@
 
 @font-face {
     font-family: 'Playfair_Display';
-    src: url('font/Playfair_Display.woff') format('woff'),
-    url('font/Playfair_Display.woff') format('woff');
+    src: url('fonts/Playfair_Display.woff2') format('woff2'),
+    url('fonts/Playfair_Display.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -131,7 +131,7 @@ section {
     margin-bottom: var(--space-m);
 }
 
-/* Grille */
+/* Grille produits */
 .gamme {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -175,7 +175,7 @@ section {
     border-radius: 8px;
 }
 
-/* Légende */
+/* Légende produit */
 .carte-produit figcaption {
     margin-top: var(--space-s);
     font-weight: bold;
@@ -190,8 +190,8 @@ section {
 #apropos h2 {
     margin-bottom: var(--space-m);
 }
- 
-/* Texte différent, doux et lisible */
+
+/* Texte différent uniquement */
 #apropos p {
     font-family: var(--font-apropos);
     color: var(--color-gray);
